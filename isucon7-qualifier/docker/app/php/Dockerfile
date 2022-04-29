@@ -1,6 +1,6 @@
 FROM php:7.1.9-fpm
 
-ARG GIT_URL=https://github.com/isucon/isucon7-qualify.git
+ARG GIT_URL=https://github.com/unagiya/isucon7-qualify.git
 
 RUN docker-php-ext-install pdo_mysql
 

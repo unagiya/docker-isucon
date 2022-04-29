@@ -4,7 +4,7 @@ services:
     build:
       context: ./docker/bench
       args:
-        GIT_URL: https://github.com/isucon/isucon7-qualify.git
+        GIT_URL: https://github.com/unagiya/isucon7-qualify.git
     image: isucon7-qualifier-bench
     depends_on:
       - web
@@ -14,7 +14,7 @@ services:
     build:
       context: ./docker/web-php
       args:
-        GIT_URL: https://github.com/isucon/isucon7-qualify.git
+        GIT_URL: https://github.com/unagiya/isucon7-qualify.git
     image: isucon7-qualifier-web:nginx-php
     networks:
       - frontend
@@ -27,7 +27,7 @@ services:
     build:
       context: ./docker/app/php
       args:
-        GIT_URL: https://github.com/isucon/isucon7-qualify.git
+        GIT_URL: https://github.com/unagiya/isucon7-qualify.git
     image: isucon7-qualifier-app:php
     networks:
       - backend
@@ -43,7 +43,7 @@ services:
     build:
       context: ./docker/db
       args:
-        GIT_URL: https://github.com/isucon/isucon7-qualify.git
+        GIT_URL: https://github.com/unagiya/isucon7-qualify.git
     image: isucon7-qualifier-db
     ports:
       - "3306"
