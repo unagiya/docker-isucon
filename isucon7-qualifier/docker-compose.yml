@@ -19,6 +19,8 @@ services:
     networks:
       - frontend
       - backend
+    volumes:
+      - ./data/images:/data/images
     depends_on:
       - app
     ports:
@@ -47,6 +49,9 @@ services:
       ISUBATA_DB_USER: isucon
       ISUBATA_DB_PASSWORD: isucon
       ISUBATA_DB_HOST: db
+    volumes:
+      - ./data/images:/data/images
+
   db:
     build:
       context: ./docker/db
@@ -54,7 +59,7 @@ services:
         GIT_URL: https://github.com/unagiya/isucon7-qualify.git
     image: isucon7-qualifier-db
     ports:
-      - "3306"
+      - "3306:3306"
     networks:
       - backend
     command: ["--character-set-server=utf8mb4"]
@@ -63,6 +68,8 @@ services:
       #MYSQL_DATABASE: isubata
       #MYSQL_USER: isucon
       #MYSQL_PASSWORD: isucon
+    volumes:
+      - ./data/images:/data/images
 networks:
   frontend:
   backend:
